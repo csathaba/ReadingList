@@ -1,0 +1,6 @@
+$('.book-list').prepend('<%=j render @book %>');
+$('.book-form').toggle();
+var form = $('#new_book');
+form.find('input[type=text]').val('');
+form.find('input[type=radio]').removeAttr('checked');
+form.find('input[type=checkbox]').removeAttr('checked');
