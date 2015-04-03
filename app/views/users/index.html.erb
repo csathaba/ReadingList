@@ -1,0 +1,23 @@
+<div class="container">
+
+  <h1>Users</h1>
+
+  <ol class="breadcrumb">
+    <li class="active">
+      The list of users:
+    </li>
+  </ol>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <ul class="list-unstyled book-list">
+
+        <% @users.each do |user| %>
+          <h3><a href="#"><%= user.name %></a></h3>
+          <p class="text-muted"><em><%= user.email %></em></p>
+        <% end %>
+
+      </ul>
+    </div>
+  </div>
+</div>

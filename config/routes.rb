@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  # get 'users/new'
+
   resources :books
   root to: 'books#index'
+
+  resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
