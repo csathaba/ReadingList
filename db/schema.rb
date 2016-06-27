@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150403165858) do
+ActiveRecord::Schema.define(version: 20150404074149) do
 
   create_table "book_genres", force: true do |t|
     t.integer  "book_id"
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(version: 20150403165858) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "reads", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "book_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reads", ["book_id"], name: "index_reads_on_book_id"
+  add_index "reads", ["user_id"], name: "index_reads_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

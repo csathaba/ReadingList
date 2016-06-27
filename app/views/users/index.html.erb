@@ -24,6 +24,13 @@
         <% @users.each do |user| %>
           <h3><%= link_to user.name, user_path(user) %></h3>
           <p class="text-muted"><em><%= user.email %></em></p>
+
+          <% if user.books.first.present? %>
+            <% user.books.each do |book| %>
+              <%= book.title %>
+            <% end %>
+          <% end %>
+          
         <% end %>
 
       </ul>
@@ -34,5 +41,14 @@
   <hr>
 
   <h4><em> <%= link_to "New User", new_user_path %> </em></h4>
+
+    <ol class="breadcrumb">
+    List of Books: 
+    <li class="active">
+      <% @books.each do |book| %>
+          <%= link_to book.title, book_path(book) %>
+      <% end %>
+    </li>
+  </ol>
 
 </div>

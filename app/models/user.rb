@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 	# attr_accessible :name, :email
+	has_many :reads
+	has_many :books, through: :reads
 
 	before_save { |user| user.email = email.downcase }
 

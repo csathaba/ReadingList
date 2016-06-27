@@ -5,7 +5,9 @@ class UsersController < ApplicationController
 	end
   
 	def index
-		@users = User.all
+		# @users = User.includes(:books).all
+    @users = User.all
+    @books = Book.all
 	end
 
 	def show
@@ -13,6 +15,9 @@ class UsersController < ApplicationController
 
 	def edit
 	end
+
+  def destroy
+  end
 
   def create
     @user = User.new(user_params)

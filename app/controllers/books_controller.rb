@@ -5,6 +5,7 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @books = Book.includes(:genres).search(params[:keyword]).filter(params[:filter])
+    @books_1 = Book.includes(:genres).first
     @genres = Genre.all
   end
 

@@ -8,4 +8,13 @@
   <%= @user.email %>
 </p>
 
+<p>
+  <strong>books:</strong>
+	<% if @user.books.first.present? %>
+		<% @user.books.each do |book| %>
+		  <%= book.title %>
+		<% end %>
+	<% end %>
+</p>
+
 <%= link_to 'Back', users_path %>
